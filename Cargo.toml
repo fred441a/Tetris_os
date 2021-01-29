@@ -1,0 +1,10 @@
+[package]
+name = "tetris_os"
+version = "0.1.0"
+authors = ["fred441a <frederik@altofte.dk>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+termion = "*"
