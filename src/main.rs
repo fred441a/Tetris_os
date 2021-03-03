@@ -281,7 +281,7 @@ impl Brick {
             for j in i.iter() {
                 if (*j).isFilled {
                     print!(
-                        "{}#{}",
+                        "{}█{}",
                         color::Fg(color::Rgb((*j).red, (*j).green, (*j).blue)),
                         color::Fg(color::Reset)
                     )
@@ -321,12 +321,12 @@ impl Game {
             for j in i.iter() {
                 if (*j).isFilled {
                     print!(
-                        "{}#{}",
+                        "{}█{}",
                         color::Fg(color::Rgb((*j).red, (*j).green, (*j).blue)),
                         color::Fg(color::Reset)
                     )
                 } else {
-                    print!(".");
+                    print!("#");
                 }
             }
             print!("\n\r");
@@ -484,18 +484,6 @@ impl Game {
             self.points += lines.pow(2);
             self.map = temp_map;
         }
-        //fix
     }
 
-    //this is poopy
-    fn MapMovedown(&mut self, lines: usize) {
-        let mut temp_map: [[Block; 10]; 20] = [[emptyblock; 10]; 20];
-        for (i, t) in self.map.iter().enumerate() {
-            for (j, l) in t.iter().enumerate() {
-                if l.isFilled {
-                    temp_map[i - lines][j] = self.map[i][j];
-                }
-            }
-        }
-    }
 }
